@@ -12,6 +12,9 @@
       ./modules/system/locale.nix
       ./modules/system/packages.nix
 
+      ./modules/desktop/gnome.nix
+      ./modules/desktop/niri.nix
+
       <home-manager/nixos>
     ];
 
@@ -32,13 +35,6 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # Desktop / Window Manager
-  config = lib.mkIf (config.specialisation == {}) (import ./modules/desktop/gnome.nix);
-  specialisation.niri.configuration.imports = [ ./modules/desktop/niri.nix ];
-  # specialisation.mangowc.configuration.imports = [ ./modules/desktop/mangowc.nix ];
-  # specialisation.hyprland.configuration.imports = [ ./modules/desktop/hyprland.nix ];
-  # specialisation.driftwm.configuration.imports = [ ./modules/desktop/driftwm.nix ];
 
   # User / Home Manager
   users.users."nix" = {

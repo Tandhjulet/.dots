@@ -1,14 +1,15 @@
 { config, pkgs, ... }:
 
 {
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   programs.firefox.enable = true;
 
-  programs.git = {
-    enable = true;
-
-    config.user = {
-      name = "Mads";
-      email = "madsbechmortensen@hotmail.dk";
-    };
-  };
+  environment.systemPackages = with pkgs; [
+    vim 
+    wget
+    spotify
+    vscode
+  ];
 }

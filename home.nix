@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  programs.alacritty.enable = true;
+  programs.fuzzel.enable = true;
+
   programs.ssh = {
     enable = true;
   };

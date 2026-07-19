@@ -13,7 +13,7 @@
       ./modules/system/packages.nix
 
       ./modules/desktop/gnome.nix
-      ./modules/desktop/niri.nix
+      ./modules/desktop/niri/mod.nix
 
       <home-manager/nixos>
     ];

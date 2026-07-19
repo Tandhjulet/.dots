@@ -34,7 +34,11 @@
   services.printing.enable = true;
 
   # Desktop / Window Manager
-  config = lib.mkIf (config.specialisation == {}) (import ./modules/wm/gnome.nix);
+  config = lib.mkIf (config.specialisation == {}) (import ./modules/desktop/gnome.nix);
+  specialisation.niri.configuration.imports = [ ./modules/desktop/niri.nix ];
+  # specialisation.mangowc.configuration.imports = [ ./modules/desktop/mangowc.nix ];
+  # specialisation.hyprland.configuration.imports = [ ./modules/desktop/hyprland.nix ];
+  # specialisation.driftwm.configuration.imports = [ ./modules/desktop/driftwm.nix ];
 
   # User / Home Manager
   users.users."nix" = {

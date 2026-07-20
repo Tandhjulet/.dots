@@ -11,5 +11,15 @@
     wget
     spotify
     vscode
+
+    ## Files, images, etc.
+    jq # Command-line JSON
+    imagemagick # Image processing (for Niri, backdrop blur)
+    ffmpeg
+    unrar
+    unzip
+    zip
+    mpv # Movie Player (video)
+    imv # LW images viewer
   ];
 }

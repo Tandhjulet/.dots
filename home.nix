@@ -1,8 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  programs.alacritty.enable = true;
-  programs.fuzzel.enable = true;
+  home.packages = with pkgs; [
+    alacritty
+  ];
+
+  services.polkit-gnome.enable = true;
 
   programs.ssh = {
     enable = true;

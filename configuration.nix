@@ -8,6 +8,7 @@
       ./modules/hardware/nvidia.nix
       ./modules/hardware/audio.nix
 
+      ./modules/system/fonts.nix
       ./modules/system/networking.nix
       ./modules/system/locale.nix
       ./modules/system/packages.nix
@@ -35,6 +36,9 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  security.polkit.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   # User / Home Manager
   users.users."nix" = {

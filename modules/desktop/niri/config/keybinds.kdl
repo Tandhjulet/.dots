@@ -1,5 +1,5 @@
 binds {
-    Mod+Shift+Slash { show-hotkey-overlay; }
+    Mod+K { show-hotkey-overlay; }
 
     // Custom Script Launchers
     Mod+V hotkey-overlay-title="Clipboard Menu" { spawn "sh" "-c" "~/.local/bin/clip_menu.sh"; }

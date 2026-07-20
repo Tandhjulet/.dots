@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  pos = config.my.desktop.barPosition;
+in 
 {
   # TODO: wallpaper
 

@@ -6,7 +6,6 @@ let
         mode "${toString m.width}x${toString m.height}@${toString m.refresh}"
         position x=${toString m.x} y=${toString m.y}
         scale ${toString m.scale}
-        ${if m.primary or false then "" else ""}
     }
   '';
   niriOutputs = lib.concatStrings (map mkNiriOutput config.my.monitors);

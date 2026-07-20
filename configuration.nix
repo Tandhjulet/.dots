@@ -46,10 +46,6 @@
     description = "mads";
     extraGroups = [ "networkmanager" "wheel" ];
   };
-
-  home-manager.users."nix" = {
-    imports = [ ./home.nix ];
-  };
   
   # Nix Settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

@@ -12,5 +12,8 @@
     swaybg
   ];
 
-  xdg.configFile."niri/config.kdl".source = ./config.kdl;
+  xdg.configFile."niri" = {
+    source = ./config;
+    recursive = true;
+  };
 }

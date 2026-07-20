@@ -23,7 +23,7 @@
     slurp # Regional screenshots
 
     xdg-utils
-    xorg.xhost
+    xhost
   ];
 
   xdg.portal = {

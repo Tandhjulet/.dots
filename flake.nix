@@ -23,9 +23,9 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.extraSpecialArgs = { inherit inputs userName stateVersion; };
               home-manager.users."${userName}" = import ./hosts/${hostname}/home.nix;
-            }
+            };
           ];
         };
     in {

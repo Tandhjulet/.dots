@@ -1,4 +1,4 @@
-{ lib, config, pkgs, stateVersion, ... }:
+{ lib, config, pkgs, username, stateVersion, ... }:
 
 {
   imports =
@@ -39,9 +39,8 @@
   services.gnome.gnome-keyring.enable = true;
 
   # User / Home Manager
-  users.users."nix" = {
+  users.users."${username}" = {
     isNormalUser = true;
-    description = "mads";
     extraGroups = [ "networkmanager" "wheel" ];
   };
   

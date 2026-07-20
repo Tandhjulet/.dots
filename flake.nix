@@ -12,10 +12,10 @@
     let
       stateVersion = "26.05";
 
-      mkHost = { hostname, userName, system ? "x86_64-linux" }:
+      mkHost = { hostname, username, system ? "x86_64-linux" }:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs userName stateVersion; };
+          specialArgs = { inherit inputs hostname username stateVersion; };
           modules = [
             ./hosts/${hostname}/configuration.nix
 
@@ -23,14 +23,14 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit inputs userName stateVersion; };
-              home-manager.users."${userName}" = import ./hosts/${hostname}/home.nix;
+              home-manager.extraSpecialArgs = { inherit inputs hostname username stateVersion; };
+              home-manager.users."${username}" = import ./hosts/${hostname}/home.nix;
             }
           ];
         };
     in {
       nixosConfigurations = {
-        desktop = mkHost { hostname = "desktop"; userName = "nix"; };
+        desktop = mkHost { hostname = "desktop"; username = "nix"; };
       };
     };
 }

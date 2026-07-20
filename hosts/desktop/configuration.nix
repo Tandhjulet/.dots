@@ -1,20 +1,20 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, stateVersion, ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
 
-      ./modules/hardware/nvidia.nix
-      ./modules/hardware/audio.nix
+      ../../modules/hardware/nvidia.nix
+      ../../modules/hardware/audio.nix
 
-      ./modules/system/fonts.nix
-      ./modules/system/networking.nix
-      ./modules/system/locale.nix
-      ./modules/system/packages.nix
+      ../../modules/system/fonts.nix
+      ../../modules/system/networking.nix
+      ../../modules/system/locale.nix
+      ../../modules/system/packages.nix
 
-      ./modules/desktop/gnome.nix
-      ./modules/desktop/niri/mod.nix
+      ../../modules/desktop/gnome.nix
+      ../../modules/desktop/niri/mod.nix
     ];
 
   # Bootloader.
@@ -48,5 +48,5 @@
   # Nix Settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  system.stateVersion = "26.05";
+  system.stateVersion = stateVersion;
 }

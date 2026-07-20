@@ -9,23 +9,28 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
-    let 
-      system = "x86_64-linux";
-    in {
-      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./configuration.nix
+    let
+      stateVersion = "26.05";
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.nix = import ./home.nix;
-          }
-        ];
+      mkHost = { hostname, userName, system ? "x86_64-linux" }:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs userName stateVersion; };
+          modules = [
+            ./hosts/${hostname}/configuration.nix
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users."${userName}" = import ./hosts/${hostname}/home.nix;
+            }
+          ];
+        };
+    in {
+      nixosConfigurations = {
+        desktop = mkHost { hostname = "desktop"; userName = "nix"; };
       };
     };
 }

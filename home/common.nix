@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./theming/default.nix
+  ];
+
   home.packages = with pkgs; [
     alacritty
   ];

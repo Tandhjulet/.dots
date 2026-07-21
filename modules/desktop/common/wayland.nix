@@ -11,7 +11,8 @@ in
   # Core
   programs.waybar = {
     enable = true;
-    style = ./waybar/style.css;
+    style = ./waybar/${pos}/style.css;
+    settings = import ./waybar/${pos}/config.nix;
   };
 
   # TODO: wallpaper

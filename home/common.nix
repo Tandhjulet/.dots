@@ -10,6 +10,7 @@
   ];
 
   services.polkit-gnome.enable = true;
+  services.mpris-proxy.enable = true;
 
   programs.ssh = {
     enable = true;

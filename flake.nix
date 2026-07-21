@@ -17,7 +17,7 @@
       mkHost = { hostname, username, system ? "x86_64-linux" }:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit system inputs hostname username stateVersion; };
+          specialArgs = { inherit inputs hostname username stateVersion; };
           modules = [
             ./hosts/${hostname}/configuration.nix
 
@@ -25,7 +25,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { inherit system inputs hostname username stateVersion; };
+              home-manager.extraSpecialArgs = { inherit inputs hostname username stateVersion; };
               home-manager.users."${username}" = import ./hosts/${hostname}/home.nix;
             }
           ];

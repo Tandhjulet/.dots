@@ -6,7 +6,7 @@
   ];
 
   home.packages = with pkgs; [
-    inputs.matugen.packages.${system}.default
+    inputs.matugen.packages.${stdenv.hostPlatform.system}.default
     (pkgs.writeShellScriptBin "set-wallpaper" ''
       set -e
       WALLPAPER="$1"

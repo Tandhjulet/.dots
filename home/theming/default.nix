@@ -25,5 +25,5 @@
       matugen image "$WALLPAPER"
       swaybg -i "$WALLPAPER" &
     '')
-  ]
+  ];
 }

@@ -23,9 +23,11 @@
     templates = {
       waybar = {
         input_path = ./templates/colors.css;
-        output_path = "${config.xdg.configHome}/waybar/colors.css";
-        hook = "pkill -SIGUSR2 waybar";
+        output_path = "~/.config/waybar/colors.css";
+        post_hook = "pkill -SIGUSR2 waybar";
       };
     };
   };
+
+  xdg.configFile."waybar/colors.css".source = "${config.programs.matugen.theme.files}/.config/waybar/colors.css";
 }

@@ -4,10 +4,17 @@ let
   pos = config.my.desktop.barPosition;
 in 
 {
-  # TODO: wallpaper
+  # imports = [
+  #   /waybar/${pos}.nix
+  # ];
 
   # Core
-  programs.waybar.enable = true;
+  programs.waybar = {
+    enable = true;
+    style = ./waybar/style.css;
+  };
+
+  # TODO: wallpaper
   programs.fastfetch.enable = true;
   programs.rofi.enable = true; # App launcher + dmenu replacement
   services.swaync.enable = true; # Notification daemon + notification center

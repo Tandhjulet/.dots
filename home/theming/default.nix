@@ -5,8 +5,19 @@
     inputs.matugen.nixosModules.default
   ];
 
+  home.packages = with pkgs; [
+    inputs.matugen.packages.${system}.default
+    (pkgs.writeShellScriptBin "set-wallpaper" ''
+      set -e
+      WALLPAPER="$1"
+      matugen image "$WALLPAPER"
+      swaybg -i "$WALLPAPER" &
+    '')
+  ];
+
   programs.matugen = {
     enable = true;
+    jsonFormat = "hex";
     variant = "dark";
 
     templates = {
@@ -17,13 +28,4 @@
       };
     };
   };
-
-  home.packages = with pkgs; [
-    (pkgs.writeShellScriptBin "set-wallpaper" ''
-      set -e
-      WALLPAPER="$1"
-      matugen image "$WALLPAPER"
-      swaybg -i "$WALLPAPER" &
-    '')
-  ];
 }

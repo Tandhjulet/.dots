@@ -7,6 +7,8 @@
 
   home.packages = with pkgs; [
     alacritty
+    brightnessctl
+    fzf
   ];
 
   services.polkit-gnome.enable = true;

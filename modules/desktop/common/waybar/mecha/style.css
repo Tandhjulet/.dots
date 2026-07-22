@@ -21,7 +21,7 @@
 }
 #waybar > box {
 	margin: 4px;
-	background-color: @primary_container;
+	background-color: @main-bg;
 }
 
 button {
@@ -30,14 +30,14 @@ button {
 	padding: 0 10px;
 }
 button:hover {
-	background-color: @secondary_container;
-	color: @secondary;
+	background-color: @hover-bg;
+	color: @hover-fg;
 }
 
 tooltip {
-	border: 2px solid @outline;
+	border: 2px solid @main-br;
 	border-radius: 10px;
-	background-color: @primary_container;
+	background-color: @main-bg;
 }
 tooltip > box {
 	padding: 0 6px;

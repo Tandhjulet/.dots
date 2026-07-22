@@ -1,0 +1,28 @@
+/* Main colors */
+
+@define-color accent         @secondary;
+@define-color main-br        @outline;
+@define-color main-bg        @background;
+@define-color main-fg        @primary;
+@define-color hover-bg       @surface;
+@define-color hover-fg       alpha(@main-fg, 0.75);
+@define-color outline        @outline;
+
+/* Module colors */
+
+@define-color workspaces     @surface_container;
+@define-color temperature    @surface_container;
+@define-color memory         @surface_container_high;
+@define-color cpu            @surface_container_highest;
+@define-color time           @surface_container_highest;
+@define-color date           @surface_container_high;
+@define-color tray           @surface_container;
+@define-color volume         @surface_container;
+@define-color backlight      @surface_container_high;
+@define-color battery        @surface_container_highest;
+
+/* State colors */
+
+@define-color warning        @tertiary;
+@define-color critical       @error;
+@define-color charging       @surface_tint;

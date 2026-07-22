@@ -1,9 +1,16 @@
 @import "colors.css";
+@import "styles/theme.css";
 
 * {
 	all: initial;
 	color: @primary;
 }
+
+@import "styles/fonts.css";
+@import "styles/modules-left.css";
+@import "styles/modules-center.css";
+@import "styles/modules-right.css";
+@import "styles/states.css";
 
 .module {
 	margin-bottom: -1px;

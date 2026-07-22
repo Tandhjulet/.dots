@@ -19,4 +19,9 @@ in
     source = ./${waybarKind}/styles;
     recursive = true;
   };
+
+  xdg.configFile."waybar/scripts" = {
+    source = ./${waybarKind}/scripts;
+    recursive = true;
+  };
 }

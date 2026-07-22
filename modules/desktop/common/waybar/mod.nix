@@ -7,7 +7,7 @@ in
   programs.waybar = {
     enable = true;
     style = ./${waybarKind}/style.css;
-    settings = builtins.fromJson (builtins.readFile ./${waybarKind}/config.json);
+    settings.mainBar = builtins.fromJSON (builtins.readFile ./${waybarKind}/config.json);
   };
 
   xdg.configFile."waybar/modules" = {

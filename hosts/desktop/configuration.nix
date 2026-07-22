@@ -23,7 +23,7 @@
   boot.loader.grub = {
     enable = true;
     efiSupport = true;
-    useOSProber = true;
+    useOSProber = false; # true;
     device = "nodev";
   };
 

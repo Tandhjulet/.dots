@@ -1,0 +1,7 @@
+{
+	"custom/no-battery": {
+		"exec": "~/.config/waybar/scripts/no-battery.sh",
+		"return-type": "",
+		"interval": 30
+	}
+}

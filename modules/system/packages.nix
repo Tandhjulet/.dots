@@ -12,6 +12,9 @@
     spotify
     vscode
 
+    ## Misc
+    brightnessctl
+
     ## Files, images, etc.
     jq # Command-line JSON
     imagemagick # Image processing (for Niri, backdrop blur)

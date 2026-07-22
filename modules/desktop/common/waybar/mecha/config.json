@@ -49,9 +49,10 @@
 		"custom/left_div#6",
 		"group/pulseaudio",
 		"custom/left_div#7",
-		"backlight",
+		"wlr/taskbar",
 		"custom/left_div#8",
 		"battery",
+		"custom/no-battery",
 		"custom/left_inv#2",
 		"custom/power"
 	]

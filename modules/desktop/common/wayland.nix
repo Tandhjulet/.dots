@@ -1,19 +1,9 @@
 { config, pkgs, ... }:
 
-let
-  pos = config.my.desktop.barPosition;
-in 
 {
-  # imports = [
-  #   /waybar/${pos}.nix
-  # ];
-
-  # Core
-  programs.waybar = {
-    enable = true;
-    style = ./waybar/${pos}/style.css;
-    settings = import ./waybar/${pos}/config.nix;
-  };
+  import = [
+    ./waybar/mod.nix
+  ];
 
   # TODO: wallpaper
   programs.fastfetch.enable = true;

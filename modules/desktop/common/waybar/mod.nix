@@ -1,0 +1,22 @@
+{ config, pkgs, ... }:
+
+let
+  waybarKind = config.my.desktop.waybarKind;
+in 
+{
+  programs.waybar = {
+    enable = true;
+    style = ./${waybarKind}/style.css;
+    settings = builtins.fromJson (builtins.readFile ./${waybarKind}/config.json);
+  };
+
+  xdg.configFile."waybar/modules" = {
+    source = ./${waybarKind}/modules;
+    recursive = true;
+  };
+
+  xdg.configFile."waybar/styles" = {
+    source = ./${waybarKind}/styles;
+    recursive = true;
+  };
+}

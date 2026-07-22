@@ -2,10 +2,10 @@
 
 {
   options.my.desktop = {
-    barPosition = lib.mkOption {
-      type = lib.types.enum [ "top" ];
-      default = "top";
-      description = "Where waybar/status bar should be anchored";
+    waybarKind = lib.mkOption {
+      type = lib.types.enum [ "mecha" ];
+      default = "mecha";
+      description = "Waybar kind";
     };
   };
 

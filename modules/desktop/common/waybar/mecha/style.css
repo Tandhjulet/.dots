@@ -1,0 +1,37 @@
+@import "colors.css";
+
+* {
+	all: initial;
+	color: @primary;
+}
+
+.module {
+	margin-bottom: -1px;
+}
+
+#waybar {
+	background-color: @outline;
+}
+#waybar > box {
+	margin: 4px;
+	background-color: @primary_container;
+}
+
+button {
+	border-radius: 16px;
+	min-width: 16px;
+	padding: 0 10px;
+}
+button:hover {
+	background-color: @secondary_container;
+	color: @secondary;
+}
+
+tooltip {
+	border: 2px solid @outline;
+	border-radius: 10px;
+	background-color: @primary_container;
+}
+tooltip > box {
+	padding: 0 6px;
+}

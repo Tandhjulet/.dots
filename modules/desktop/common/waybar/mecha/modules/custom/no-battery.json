@@ -1,7 +1,12 @@
 {
 	"custom/no-battery": {
 		"exec": "~/.config/waybar/scripts/no-battery.sh",
-		"return-type": "",
-		"interval": 30
+		"format": "{icon}",
+		"format-icons": {
+			"no-battery": "󰚥",
+			"battery": ""
+		},
+		"return-type": "json",
+		"interval": "once"
 	}
 }

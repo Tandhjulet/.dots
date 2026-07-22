@@ -41,6 +41,13 @@
 #battery {
 	background-color: @battery;
 }
+#custom-no-battery {
+	background-color: @battery;
+}
+#custom-no-battery.no-battery {
+	padding-left: 6px;
+	padding-right: 9px;
+}
 #custom-left_inv.2 {
 	color: @battery;
 }

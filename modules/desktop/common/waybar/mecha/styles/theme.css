@@ -18,7 +18,7 @@
 @define-color date           @surface_container_high;
 @define-color tray           @surface_container;
 @define-color volume         @surface_container;
-@define-color backlight      @surface_container_high;
+@define-color taskbar        @surface_container_high;
 @define-color battery        @surface_container_highest;
 
 /* State colors */

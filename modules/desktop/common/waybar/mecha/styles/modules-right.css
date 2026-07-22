@@ -19,15 +19,28 @@
 }
 
 /*----------------
-    Brightness
+    Taskbar
 ----------------*/
 
 #custom-left_div.7 {
 	background-color: @volume;
-	color: @backlight;
+	color: @taskbar;
 }
-#backlight {
-	background-color: @backlight;
+#taskbar {
+	background-color: @taskbar;
+	padding-left: 3px;
+	padding-right: 6px;
+}
+#taskbar button {
+	background: transparent;
+	border-radius: 10px;
+	padding: 0 4px;
+}
+#taskbar button.active {
+	background: @surface_container_highest;
+}
+#taskbar button:hover {
+	background: @surface_container_highest;
 }
 
 /*-------------
@@ -35,7 +48,7 @@
 -------------*/
 
 #custom-left_div.8 {
-	background-color: @backlight;
+	background-color: @taskbar;
 	color: @battery;
 }
 #battery {

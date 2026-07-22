@@ -2,6 +2,7 @@
 	"include": [
 		"~/.config/waybar/modules/*.json",
 		"~/.config/waybar/modules/custom/*.json",
+		"~/.config/waybar/modules/niri/*.json",
 		"~/.config/waybar/modules/hyprland/*.json"
 	],
 	"layer": "top",
@@ -17,6 +18,7 @@
 	"modules-left": [
 		"custom/user",
 		"custom/left_div#1",
+		"niri/workspaces",
 		"hyprland/workspaces",
 		"custom/right_div#1",
 		"hyprland/window"

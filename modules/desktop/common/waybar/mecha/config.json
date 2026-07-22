@@ -21,7 +21,8 @@
 		"niri/workspaces",
 		"hyprland/workspaces",
 		"custom/right_div#1",
-		"hyprland/window"
+		"hyprland/window",
+		"niri/window"
 	],
 	"modules-center": [
 		"hyprland/language",

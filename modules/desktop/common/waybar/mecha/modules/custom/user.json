@@ -1,0 +1,7 @@
+{
+	"custom/user": {
+		"format": "󰌽",
+		"max-length": 4,
+		"min-length": 4
+	}
+}

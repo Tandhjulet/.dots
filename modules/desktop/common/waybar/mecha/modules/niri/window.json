@@ -1,0 +1,9 @@
+{
+	"niri/window": {
+		"format": "{title}",
+		"rewrite": {
+			"(.*) - Mozilla Firefox": "🌎 $1"
+		},
+		"seperate-outputs": true
+	}
+}

@@ -26,8 +26,14 @@
         output_path = "~/.config/waybar/colors.css";
         post_hook = "pkill -SIGUSR2 waybar";
       };
+
+      rofi = {
+        input_path = ./templates/rofi-colors.rasi;
+        output_path = "~/.config/rofi/colors.rasi";
+      };
     };
   };
 
   xdg.configFile."waybar/colors.css".source = "${config.programs.matugen.theme.files}/.config/waybar/colors.css";
+  xdg.configFile."rofi/colors.rasi".source = "${config.programs.matugen.theme.files}/.config/rofi/rofi-colors.rasi";
 }

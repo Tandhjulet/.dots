@@ -14,7 +14,7 @@
 
     extraConfig = {
       show-icons = true;
-      drun-display-format = "{icon} {format}";
+      drun-display-format = "{icon} {name}";
       disable-history = false;
       display-drun = " 󰍜 Apps ";
       display-run = "   Run ";
@@ -26,6 +26,8 @@
       cycle = false;
     };
 
-    theme = ./theme.rasi;
+    theme = "~/.config/rofi/theme.rasi";
   };
+
+  xdg.configFile."rofi/theme.rasi".source = ./theme.rasi;
 }

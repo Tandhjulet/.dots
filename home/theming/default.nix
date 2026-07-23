@@ -35,5 +35,5 @@
   };
 
   xdg.configFile."waybar/colors.css".source = "${config.programs.matugen.theme.files}/.config/waybar/colors.css";
-  xdg.configFile."rofi/colors.rasi".source = "${config.programs.matugen.theme.files}/.config/rofi/rofi-colors.rasi";
+  xdg.configFile."rofi/colors.rasi".source = "${config.programs.matugen.theme.files}/.config/rofi/colors.rasi";
 }

@@ -4,11 +4,11 @@
   imports = [
     ./waybar/mod.nix
     ./rofi/mod.nix
+    ./swaync/mod.nix
   ];
 
   # TODO: wallpaper
   programs.fastfetch.enable = true;
-  services.swaync.enable = true; # Notification daemon + notification center
   programs.swaylock.enable = true; # screen locker
   # let the terminal and shell be decided by the user
 

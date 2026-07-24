@@ -1,7 +1,7 @@
 {
 	"custom/notification": {
 		"tooltip": true,
-		"format": "{icon}",
+		"format": "{icon}\u00a0\u00a0\udb81\udc25",
 		"format-icons": {
 			"notification": "󰂚<span foreground='red'><sup></sup></span>",
 			"none": "󰂚",

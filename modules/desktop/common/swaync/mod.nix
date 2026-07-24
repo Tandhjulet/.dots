@@ -7,4 +7,9 @@
     settings = builtins.fromJSON (builtins.readFile ./config.json);
     style = ./style.css;
   };
+
+  xdg.configFile."swaync/styles" = {
+    source = ./styles;
+    recursive = true;
+  };
 }

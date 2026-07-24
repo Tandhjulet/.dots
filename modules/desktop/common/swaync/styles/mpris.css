@@ -4,12 +4,17 @@
 
 	border-radius: 18px;
 	background: transparent;
+	box-shadow: none;
+}
+
+.mpris-overlay {
+	background: transparent;
 }
 
 .widget-mpris .widget-mpris-player {
 	background-color: transparent;
 	border-radius: 12px;
-	border: 1px solid @surface_dim;
+	border: 1px solid alpha(@surface, 0.7);
 	padding: 16px;
 }
 

@@ -66,14 +66,14 @@
 }
 
 /*----------------
-    Power menu
+    Power/notification menu
 ----------------*/
 
-#custom-power {
+#custom-notification {
 	border-radius: 16px;
 	padding: 0 19px 0 16px;
 	color: @accent;
 }
-#custom-power:hover {
+#custom-notification:hover {
 	background-color: @hover-bg;
 }

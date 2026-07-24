@@ -12,7 +12,6 @@
   programs.swaylock.enable = true; # screen locker
   # let the terminal and shell be decided by the user
 
-  services.mako.enable = true; # notification daemon
   services.swayidle.enable = true; # idle management daemon
   
   home.packages = with pkgs; [

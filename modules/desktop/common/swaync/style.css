@@ -65,62 +65,8 @@
 	background-color: @surface_tint;
 }
 
-.widget-mpris {
-	padding: 0;
-	border: none;
-
-	border-radius: 18px;
-	background: transparent;
-}
-
-.widget-mpris .widget-mpris-player {
-	background-color: transparent;
-	border-radius: 12px;
-	border: 1px solid @surface_dim;
-	padding: 16px;
-}
-
-.widget-mpris .widget-mpris-album-art {
-	background: none;
-	min-width: 60px;
-	min-height: 60px;
-	border-radius: 16px;
-	margin-right: 12px;
-}
-
-.widget-mpris .widget-mpris-title {
-	font-size: 20px;
-	font-weight: 600;
-	color: @primary;
-	margin-bottom: 4px;
-	background: none;
-}
-
-.widget-mpris .widget-mpris-subtitle {
-	font-size: 16px;
-	color: @secondary;
-	background: none;
-}
-
-.widget-mpris .widget-mpris-player button {
-	all: unset;
-	background: transparent;
-	border-radius: 50%;
-	padding: 7px;
-	color: @secondary;
-	font-size: 16px;
-	min-width: 34px;
-	min-height: 34px;
-	transition:
-		background-color 0.15s ease,
-		color 0.15s ease;
-}
-
-.widget-mpris .widget-mpris-player button:hover {
-	background-color: @primary_container;
-	color: @primary;
-}
-
-.widget-mpris .widget-mpris-player button:disabled {
-	color: alpha(@secondary, 0.3);
-}
+@import "styles/mpris.css";
+@import "styles/sliders.css";
+@import "styles/grid.css";
+@import "styles/notification-center.css";
+@import "styles/notifications.css";

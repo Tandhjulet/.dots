@@ -88,14 +88,6 @@ layer-rule {
 layer-rule {
     match namespace="rofi"
 
-    opacity 0.9
-    geometry-corner-radius 20
-    background-effect {
-        blur true
-        xray false
-        noise 0.3
-        saturation 1.5
-    }
     shadow {
         on
         softness 80
@@ -104,19 +96,4 @@ layer-rule {
         draw-behind-window true
         color "#00000064"
     }
-}
-
-// Rules for hakuspace
-window-rule {
-    match app-id=r#"seycava"#
-    match app-id=r#"seylavat"#
-    match app-id=r#"seyclock"#
-
-    default-column-width { proportion 0.4; }
-}
-
-window-rule {
-    match app-id=r#"seycmd"#
-
-    default-column-width { proportion 0.6; }
 }

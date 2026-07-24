@@ -1,36 +1,10 @@
-/* .widget-volume label,
-.widget-backlight label {
-	font-size: 24px;
-	color: @primary;
-	min-width: 24px;
-	margin-right: 14px;
-}
-scale trough {
-	min-height: 12px;
-	border-radius: 6px;
-	background-color: @surface_container;
-}
-scale trough progress {
-	min-height: 12px;
+scale trough highlight {
 	background-color: @primary;
 	transition: background-color 0.15s ease;
 }
-scale:hover trough progress {
+
+scale trough slider {
 	background-color: @primary;
+	outline: 4px solid @surface_container_high;
+	outline-offset: 0px;
 }
-trough highlight {
-	background: @primary;
-	border-top-left-radius: 20px;
-	border-bottom-left-radius: 20px;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	/* padding: 5px;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-	transition: all 0.7s ease; */
-/*} 
-scale slider {
-	min-width: 20px;
-	min-height: 20px;
-	border-radius: 999px;
-	background-color: @inverse_primary;
-} */

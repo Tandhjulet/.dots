@@ -31,9 +31,16 @@
         input_path = ./templates/rofi-colors.rasi;
         output_path = "~/.config/rofi/colors.rasi";
       };
+
+      swaync = {
+        input_path = ./templates/colors.css;
+        output_path = "~/.config/swaync/colors.css";
+        post_hook = "swaync-client -rs";
+      };
     };
   };
 
   xdg.configFile."waybar/colors.css".source = "${config.programs.matugen.theme.files}/.config/waybar/colors.css";
+  xdg.configFile."swaync/colors.css".source = "${config.programs.matugen.theme.files}/.config/swaync/colors.css";
   xdg.configFile."rofi/colors.rasi".source = "${config.programs.matugen.theme.files}/.config/rofi/colors.rasi";
 }

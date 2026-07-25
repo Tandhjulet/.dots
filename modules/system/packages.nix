@@ -14,6 +14,7 @@
 
     ## Misc
     brightnessctl
+    libnotify
 
     ## Files, images, etc.
     jq # Command-line JSON

@@ -28,16 +28,20 @@
 .widget-title label {
 	font-size: 16px;
 }
-.widget-title button {
+.widget-title .control-center-clear-all:disabled {
+	background: alpha(@surface_container_high, 0.6);
+}
+
+.widget-title button:hover:not(:disabled) {
 	background: @surface_bright;
+}
+
+.widget-title .control-center-clear-all {
+	background: @surface_container_high;
 	border: none;
 	border-radius: 10px;
 	padding: 7px 16px;
 	transition: background-color 0.15s ease;
-}
-.widget-title button:hover,
-.widget-title button:active {
-	background: @surface_bright;
 }
 
 @import "styles/mpris.css";

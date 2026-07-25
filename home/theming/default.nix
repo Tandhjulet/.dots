@@ -2,11 +2,11 @@
 
 {
   imports = [
-    inputs.matugen.nixosModules.default
+    ./matugen.nix
   ];
 
   home.packages = with pkgs; [
-    inputs.matugen.packages.${stdenv.hostPlatform.system}.default
+    # inputs.matugen.packages.${stdenv.hostPlatform.system}.default
     (pkgs.writeShellScriptBin "set-wallpaper" ''
       set -e
       WALLPAPER="$1"
@@ -17,30 +17,26 @@
 
   programs.matugen = {
     enable = true;
-    jsonFormat = "hex";
-    variant = "dark";
 
-    templates = {
-      waybar = {
-        input_path = ./templates/colors.css;
-        output_path = "~/.config/waybar/colors.css";
-        post_hook = "pkill -SIGUSR2 waybar";
-      };
+    settings = {
+      templates = {
+        waybar = {
+          input_path = ./templates/colors.css;
+          output_path = "$HOME/waybar/colors.css";
+          post_hook = "pkill -SIGUSR2 waybar";
+        };
 
-      rofi = {
-        input_path = ./templates/rofi-colors.rasi;
-        output_path = "~/.config/rofi/colors.rasi";
-      };
+        rofi = {
+          input_path = ./templates/rofi-colors.rasi;
+          output_path = "$HOME/rofi/colors.rasi";
+        };
 
-      swaync = {
-        input_path = ./templates/colors.css;
-        output_path = "~/.config/swaync/colors.css";
-        post_hook = "swaync-client -rs";
+        swaync = {
+          input_path = ./templates/colors.css;
+          output_path = "$HOME/swaync/colors.css";
+          post_hook = "swaync-client -rs";
+        };
       };
     };
   };
-
-  xdg.configFile."waybar/colors.css".source = "${config.programs.matugen.theme.files}/.config/waybar/colors.css";
-  xdg.configFile."swaync/colors.css".source = "${config.programs.matugen.theme.files}/.config/swaync/colors.css";
-  xdg.configFile."rofi/colors.rasi".source = "${config.programs.matugen.theme.files}/.config/rofi/colors.rasi";
 }

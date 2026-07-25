@@ -41,7 +41,7 @@
   # User / Home Manager
   users.users."${username}" = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "wireshark" "lp" "storage" "audio" "video" "networkmanager" "wheel" ];
   };
   
   # Nix Settings

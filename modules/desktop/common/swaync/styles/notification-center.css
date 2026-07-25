@@ -1,0 +1,11 @@
+.control-center {
+	background-color: alpha(@surface, 0.9);
+	border: 1px solid @surface_dim;
+	border-radius: 15px;
+	padding: 28px;
+	min-width: 380px;
+}
+
+.control-center > box > *:last-child {
+	margin-bottom: 0;
+}

@@ -27,14 +27,32 @@
 	"hide-on-action": true,
 	"script-fail-notify": true,
 	"widgets": [
+		"menubar",
 		"mpris",
-		"title",
 		"volume",
 		"backlight",
+		"title",
 		"notifications",
 		"buttons-grid"
 	],
 	"widget-config": {
+		"menubar": {
+			"menu#power-buttons": {
+				"label": "\udb81\udc25",
+				"position": "right",
+				"actions": [
+					{
+						"label": "   Reboot"
+					},
+					{
+						"label": "   Sleep"
+					},
+					{
+						"label": "   Power Off"
+					}
+				]
+			}
+		},
 		"title": {
 			"text": "Notifications",
 			"clear-all-button": true,

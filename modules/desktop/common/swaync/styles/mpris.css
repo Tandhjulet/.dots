@@ -7,15 +7,25 @@
 	box-shadow: none;
 }
 
-.mpris-overlay {
-	background: transparent;
+.mpris-overlay > .horizontal {
+	background-color: alpha(@surface, 0.5);
+	border-radius: 15px;
+}
+
+.mpris-overlay > :first-child {
+	padding: 6px;
+}
+
+.mpris-overlay > :last-child {
+	margin-top: 12px;
 }
 
 .widget-mpris .widget-mpris-player {
 	background-color: transparent;
 	border-radius: 12px;
 	border: 1px solid alpha(@surface, 0.7);
-	padding: 16px;
+	padding: 0;
+	margin: 0;
 }
 
 .widget-mpris .widget-mpris-album-art {
@@ -23,7 +33,7 @@
 	min-width: 60px;
 	min-height: 60px;
 	border-radius: 16px;
-	margin-right: 12px;
+	margin-right: 0px;
 }
 
 .widget-mpris .widget-mpris-title {
@@ -55,7 +65,7 @@
 }
 
 .widget-mpris .widget-mpris-player button:hover {
-	background-color: @primary_container;
+	background-color: alpha(@surface, 0.5);
 	color: @primary;
 }
 

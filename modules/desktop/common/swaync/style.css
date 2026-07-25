@@ -15,31 +15,6 @@
 	min-width: 380px;
 }
 
-/* .widget-mpris, */
-.widget-volume,
-.widget-backlight,
-.widget-buttons-grid
-	.control-center-list
-	> box
-	> *:not(.widget-title) {
-	background-color: @surface_container_high;
-	border-radius: 18px;
-	padding: 18px;
-	margin-bottom: 14px;
-	border: 1px solid @surface_dim;
-}
-
-.widget-volume,
-.widget-backlight {
-	padding: 14px 18px;
-}
-.widget-buttons-grid {
-	padding: 12px;
-}
-.control-center > box > *:last-child {
-	margin-bottom: 0;
-}
-
 .widget-title {
 	background: transparent;
 	border: none;
@@ -63,3 +38,4 @@
 @import "styles/grid.css";
 @import "styles/notification-center.css";
 @import "styles/notifications.css";
+@import "styles/menubar.css";

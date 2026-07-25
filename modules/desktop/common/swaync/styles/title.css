@@ -2,10 +2,10 @@
 	background: transparent;
 	border: none;
 	padding: 4px 6px 0 6px;
-	margin-bottom: 0;
+	margin-bottom: 8px;
 }
 .widget-title label {
-	font-size: 16px;
+	font-size: 18px;
 }
 .widget-title .control-center-clear-all:disabled {
 	background: alpha(@surface_container_high, 0.6);

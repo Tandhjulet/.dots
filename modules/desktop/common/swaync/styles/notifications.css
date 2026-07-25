@@ -1,9 +1,10 @@
 .widget-notifications {
-	margin-top: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .control-center-list {
-	padding-bottom: 1px;
+	padding: 6px 16px;
 	background-color: transparent;
 }
 

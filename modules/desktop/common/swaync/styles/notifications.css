@@ -1,3 +1,7 @@
+.widget-notifications {
+	margin-top: 0;
+}
+
 .control-center-list {
 	padding-bottom: 1px;
 	background-color: transparent;
@@ -9,25 +13,43 @@
 
 .control-center .notification-row {
 	background: transparent;
+	margin-top: 12px;
+}
+
+.control-center .notification-row:last-child {
+	margin-top: 0;
+}
+
+.control-center .notification-group {
+	margin-top: 12px;
+}
+
+.control-center .notification-group:first-child {
+	margin-top: 0;
+}
+
+.notification-group-headers {
+	margin-bottom: 12px;
+}
+.notification-group-buttons {
 	margin-bottom: 12px;
 }
 
 .control-center .notification-background {
-	background: alpha(@surface_container_high, 0.5);
-	padding: 16px;
-	border-radius: 18px;
-	transition: background-color 0.15s ease;
-}
-
-.control-center
-	.notification-row:hover
-	.notification-background {
-	background-color: alpha(@surface_bright, 1);
+	background: transparent;
+	padding: 0;
 }
 
 .control-center .notification {
-	background: transparent;
+	background: alpha(@surface_container_high, 0.5);
+	padding: 8px;
+	border-radius: 18px;
 	border: none;
+	transition: background-color 0.15s ease;
+}
+
+.control-center .notification:hover {
+	background-color: alpha(@surface_bright, 1);
 }
 
 .control-center .notification-default-action {
@@ -48,7 +70,7 @@
 	font-size: 15px;
 	font-weight: 500;
 	color: @secondary;
-	margin-left: 12px;
+	margin-left: 16px;
 }
 
 .control-center

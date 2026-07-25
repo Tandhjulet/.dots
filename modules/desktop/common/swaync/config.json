@@ -27,31 +27,33 @@
 	"hide-on-action": true,
 	"script-fail-notify": true,
 	"widgets": [
-		"menubar",
+		"buttons-grid",
 		"mpris",
 		"volume",
 		"backlight",
 		"title",
-		"notifications",
-		"buttons-grid"
+		"notifications"
 	],
 	"widget-config": {
-		"menubar": {
-			"menu#power-buttons": {
-				"label": "\udb81\udc25",
-				"position": "right",
-				"actions": [
-					{
-						"label": "   Reboot"
-					},
-					{
-						"label": "   Sleep"
-					},
-					{
-						"label": "   Power Off"
-					}
-				]
-			}
+		"buttons-grid": {
+			"actions": [
+				{
+					"label": "",
+					"type": "normal"
+				},
+				{
+					"label": "\udb81\udf09",
+					"type": "normal"
+				},
+				{
+					"label": "\udb82\udd04",
+					"type": "normal"
+				},
+				{
+					"label": "\udb81\udc25",
+					"type": "normal"
+				}
+			]
 		},
 		"title": {
 			"text": "Notifications",

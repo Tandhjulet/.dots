@@ -1,5 +1,9 @@
 @import "colors.css";
 
+:root {
+	--width: 450px;
+}
+
 * {
 	font-family: "CommitMono Nerd Font";
 	box-shadow: none;
@@ -38,4 +42,3 @@
 @import "styles/grid.css";
 @import "styles/notification-center.css";
 @import "styles/notifications.css";
-@import "styles/menubar.css";

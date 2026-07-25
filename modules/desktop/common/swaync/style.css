@@ -25,6 +25,9 @@
 	padding: 4px 6px 12px 6px;
 	margin-bottom: 8px;
 }
+.widget-title label {
+	font-size: 16px;
+}
 .widget-title button {
 	background: @surface_bright;
 	border: none;
@@ -34,7 +37,7 @@
 }
 .widget-title button:hover,
 .widget-title button:active {
-	background-color: @surface_tint;
+	background: @surface_bright;
 }
 
 @import "styles/mpris.css";

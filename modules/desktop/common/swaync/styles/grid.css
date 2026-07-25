@@ -1,21 +1,18 @@
 * {
-	--control-center-width: calc(450px - 2 * 28px);
+	--control-center-width: calc(450px - 2 * 28px + 16px);
 }
 
 .widget-buttons-grid {
+	--button-count: 4;
+	--button-gap: 6px;
 	--button-padding-height: 12px;
 	--button-padding-width: 18px;
 	--button-size: 24px;
 	--button-total-width: calc(
-		var(--button-size) + var(--button-padding-width)
+		var(--button-size) + 2 * var(--button-padding-width)
 	);
-	margin-left: 0;
-	margin-right: 0;
-}
-
-.widget-buttons-grid flowboxchild {
-	padding: 0;
-	margin-left: 6px;
+	margin: 0;
+	padding-top: 0;
 }
 
 .widget-buttons-grid .text-button {
@@ -25,15 +22,41 @@
 	min-height: var(--button-size);
 }
 
-.widget-buttons-grid flowboxchild:first-child .text-button {
+.widget-buttons-grid flowboxchild {
+	padding: 0;
+}
+
+.widget-buttons-grid flowboxchild:not(:first-child) {
+	margin-left: var(--button-gap);
+}
+
+.widget-buttons-grid flowboxchild .text-button {
+	background: @surface_container_high;
+}
+
+.widget-buttons-grid flowboxchild .text-button:hover {
+	background: @surface_bright;
+}
+
+.widget-buttons-grid flowboxchild .text-button:checked {
+	background: @primary_container;
+}
+
+.widget-buttons-grid flowboxchild:nth-child(2) {
+	margin-left: 0;
+}
+
+.widget-buttons-grid flowboxchild:nth-child(2):hover {
+	background: none;
+}
+
+.widget-buttons-grid
+	flowboxchild:nth-child(2)
+	.text-button {
 	min-width: calc(
-		var(--control-center-width) - 4 *
+		var(--control-center-width) - var(--button-count) *
 			var(--button-total-width)
 	);
 	background: none;
 	padding: 0;
-}
-
-.widget-buttons-grid flowboxchild:first-child:hover {
-	background: none;
 }

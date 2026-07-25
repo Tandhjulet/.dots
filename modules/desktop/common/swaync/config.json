@@ -38,6 +38,10 @@
 		"buttons-grid": {
 			"actions": [
 				{
+					"label": "\uec15",
+					"type": "toggle"
+				},
+				{
 					"label": "",
 					"type": "normal"
 				},

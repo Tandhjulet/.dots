@@ -2,7 +2,8 @@
 
 let
   cfg = config.my.programs.spicetify;
-  theme = import (./. + "/${cfg.theme}") { inherit pkgs; };
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+  theme = import (./. + "/${cfg.theme}") { inherit pkgs spicePkgs; };
 in
 {
   imports = [ inputs.spicetify-nix.homeManagerModules.default ];

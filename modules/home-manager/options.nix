@@ -20,7 +20,7 @@
 
       spicetify = {
         enable = lib.mkOption { type = lib.types.bool; default = true; description = "Enable Spicetify (themed Spotify)."; };
-        theme = lib.mkOption { type = lib.types.enum [ "hazy" ]; default = "hazy"; description = "Spicetify theme to use."; };
+        theme = lib.mkOption { type = lib.types.enum [ "hazy" "dribbblish" "text" ]; default = "hazy"; description = "Spicetify theme to use."; };
       };
     };
 

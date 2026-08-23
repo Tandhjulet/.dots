@@ -1,0 +1,3 @@
+{ spicePkgs, ... }:
+
+spicePkgs.themes.text

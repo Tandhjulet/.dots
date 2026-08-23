@@ -13,6 +13,7 @@ in
       enable = true;
       theme = theme;
       enabledCustomApps = lib.optional cfg.marketplace spicePkgs.apps.marketplace;
+      enabledExtensions = map (name: spicePkgs.extensions.${name}) cfg.extensions;
     };
   };
 }

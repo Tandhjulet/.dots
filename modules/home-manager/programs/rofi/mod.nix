@@ -2,7 +2,7 @@
 
 let
   cfg = config.my.programs.rofi;
-  themeDir = ../../../programs/rofi + "/${cfg.theme}";
+  themeDir = ./. + "/${cfg.theme}";
 in
 {
   config = lib.mkIf cfg.enable {

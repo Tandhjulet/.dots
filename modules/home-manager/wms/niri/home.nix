@@ -2,7 +2,7 @@
 
 let
   cfg = config.my.wms.niri;
-  themeDir = ../../../programs/niri + "/${cfg.theme}";
+  themeDir = ./. + "/${cfg.theme}";
 
   mkNiriOutput = m: ''
     output "${m.name}" {
@@ -14,7 +14,7 @@ let
   niriOutputs = lib.concatStrings (map mkNiriOutput config.my.monitors);
 in
 {
-  imports = [ ../wayland.nix ../options.nix ];
+  imports = [ ../../wayland.nix ../../options.nix ];
 
   home.packages = cfg.packages;
 

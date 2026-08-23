@@ -2,7 +2,7 @@
 
 let
   cfg = config.my.programs.swaync;
-  themeDir = ../../../programs/swaync + "/${cfg.theme}";
+  themeDir = ./. + "/${cfg.theme}";
 in
 {
   config = lib.mkIf cfg.enable {

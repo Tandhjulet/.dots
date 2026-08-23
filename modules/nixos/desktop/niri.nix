@@ -8,6 +8,6 @@
 
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-    home-manager.users."${username}".imports = [ ../../home-manager/niri/home.nix ];
+    home-manager.users."${username}".imports = [ ../../home-manager/wms/niri/home.nix ];
   };
 }

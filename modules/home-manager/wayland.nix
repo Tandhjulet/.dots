@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ./waybar/mod.nix
-    ./rofi/mod.nix
-    ./swaync/mod.nix
+    ./programs/waybar/mod.nix
+    ./programs/rofi/mod.nix
+    ./programs/swaync/mod.nix
   ];
 
   programs.fastfetch.enable = true;

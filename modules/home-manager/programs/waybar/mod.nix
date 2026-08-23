@@ -2,7 +2,7 @@
 
 let
   cfg = config.my.programs.waybar;
-  themeDir = ../../../programs/waybar + "/${cfg.theme}";
+  themeDir = ./. + "/${cfg.theme}";
 in
 {
   config = lib.mkIf cfg.enable {

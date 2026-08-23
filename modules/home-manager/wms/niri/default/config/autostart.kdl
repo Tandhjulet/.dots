@@ -6,8 +6,8 @@ spawn-at-startup "waybar"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-at-startup "nm-applet" "--indicator"
-// spawn-at-startup "awww-daemon"
-// spawn-at-startup "awww-daemon" "-n" "awww-daemon-backdrop"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "wallpaper-restore"
 
 // Optional
 // spawn-at-startup "fcitx5" "-d"

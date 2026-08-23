@@ -12,6 +12,7 @@ in
     programs.spicetify = {
       enable = true;
       theme = theme;
+      enabledCustomApps = lib.optional cfg.marketplace spicePkgs.apps.marketplace;
     };
   };
 }

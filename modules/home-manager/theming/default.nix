@@ -1,16 +1,32 @@
 { pkgs, inputs, config, ... }:
 
+let
+  wallpaperStateFile = "${config.xdg.stateHome}/wallpaper/current";
+in
 {
   imports = [
     ./matugen.nix
   ];
 
   home.packages = with pkgs; [
+    awww
+
     (pkgs.writeShellScriptBin "set-wallpaper" ''
       set -e
-      WALLPAPER="$1"
+      WALLPAPER="$(readlink -f "$1")"
+      mkdir -p "$(dirname "${wallpaperStateFile}")"
       matugen image "$WALLPAPER"
-      swaybg -i "$WALLPAPER" &
+      ln -sf "$WALLPAPER" "${wallpaperStateFile}"
+    '')
+
+    (pkgs.writeShellScriptBin "wallpaper-restore" ''
+      set -e
+      [ -e "${wallpaperStateFile}" ] || exit 0
+      for _ in $(seq 1 40); do
+        awww query >/dev/null 2>&1 && break
+        sleep 0.25
+      done
+      matugen image "$(readlink -f "${wallpaperStateFile}")"
     '')
   ];
 
@@ -20,6 +36,11 @@
     settings = {
       config = {
         version_check = false;
+
+        wallpaper = {
+          set = true;
+          command = "awww img --transition-type center {{ image }}";
+        };
       };
 
       templates = {

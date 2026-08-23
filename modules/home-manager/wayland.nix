@@ -13,7 +13,6 @@
   services.swayidle.enable = true;
 
   home.packages = with pkgs; [
-    swaybg
     xwayland-satellite
     wl-clipboard
     cliphist

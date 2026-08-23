@@ -17,6 +17,8 @@
 
       ../../modules/nixos/desktop/gnome.nix
       ../../modules/nixos/desktop/niri.nix
+
+      ../../modules/nixos/boot/plymouth.nix
     ];
 
   my.wm = "niri";

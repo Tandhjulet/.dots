@@ -6,4 +6,13 @@
     default = "niri";
     description = "Window manager / compositor to use.";
   };
+
+  options.my.boot.plymouth = {
+    enable = lib.mkOption { type = lib.types.bool; default = true; description = "Enable the Plymouth boot splash."; };
+    theme = lib.mkOption {
+      type = lib.types.enum [ "bgrt" "catppuccin-mocha" "catppuccin-macchiato" "catppuccin-frappe" "catppuccin-latte" ];
+      default = "catppuccin-mocha";
+      description = "Plymouth theme to use.";
+    };
+  };
 }

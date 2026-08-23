@@ -9,4 +9,9 @@
     hash = "sha256-2D8hcPaAqsXv7krzd8n77LqxaQzf2GMCqiDuq1YHLks=";
   };
   overwriteAssets = true;
+  additionalCss = ''
+    .Root__top-container::before {
+      display: none !important;
+    }
+  '';
 }

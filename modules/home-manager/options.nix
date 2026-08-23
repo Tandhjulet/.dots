@@ -24,7 +24,6 @@
         marketplace = lib.mkOption { type = lib.types.bool; default = true; description = "Install the Spicetify Marketplace custom app."; };
         extensions = lib.mkOption {
           type = lib.types.listOf (lib.types.enum [
-            "spicyLyrics"
             "playingSource"
             "lastfm"
             "adblock"
@@ -35,7 +34,6 @@
             "trashbin"
           ]);
           default = [
-            "spicyLyrics"
             "playingSource"
             "lastfm"
             "adblock"

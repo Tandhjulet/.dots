@@ -29,5 +29,5 @@
     theme = "~/.config/rofi/theme.rasi";
   };
 
-  xdg.configFile."rofi/theme.rasi".source = ./theme.rasi;
+  xdg.configFile."rofi/theme.rasi".source = ../../../programs/rofi/theme.rasi;
 }

@@ -5,16 +5,16 @@
     [
       ./hardware-configuration.nix
 
-      ../../modules/hardware/nvidia.nix
-      ../../modules/hardware/audio.nix
+      ../../modules/nixos/hardware/nvidia.nix
+      ../../modules/nixos/hardware/audio.nix
 
-      ../../modules/system/fonts.nix
-      ../../modules/system/networking.nix
-      ../../modules/system/locale.nix
-      ../../modules/system/packages.nix
+      ../../modules/nixos/system/fonts.nix
+      ../../modules/nixos/system/networking.nix
+      ../../modules/nixos/system/locale.nix
+      ../../modules/nixos/system/packages.nix
 
-      ../../modules/desktop/gnome.nix
-      ../../modules/desktop/niri/mod.nix
+      ../../modules/nixos/desktop/gnome.nix
+      ../../modules/nixos/desktop/niri.nix
     ];
 
   # Bootloader.

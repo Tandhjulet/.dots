@@ -11,7 +11,7 @@ let
   niriOutputs = lib.concatStrings (map mkNiriOutput config.my.monitors);
 in
 {
-  imports = [ ../common/wayland.nix ../common/options.nix ];
+  imports = [ ../wayland.nix ../options.nix ];
 
   home.packages = with pkgs; [
     alacritty
@@ -20,7 +20,7 @@ in
 
   xdg.configFile."niri/outputs.kdl".text = niriOutputs;
   xdg.configFile."niri" = {
-    source = ./config;
+    source = ../../../programs/niri/config;
     recursive = true;
   };
 }

@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ../../home/common.nix
-    ../../modules/desktop/common/options.nix
+    ../../modules/home-manager/common.nix
+    ../../modules/home-manager/options.nix
   ];
 
   # Monitor configuration

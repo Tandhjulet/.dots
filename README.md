@@ -2,6 +2,13 @@
 
 This is still a work-in-progress. More information will follow.
 
+## Structure
+
+- `hosts/<name>/` — per-machine entrypoints (`configuration.nix`, `home.nix`, hardware scan).
+- `modules/nixos/` — system-level modules (hardware, core system settings, desktop environment enablement).
+- `modules/home-manager/` — user-level (home-manager) modules: the Nix glue that wires up programs and options.
+- `programs/` — the actual program configs/assets (rofi theme, waybar theme, swaync styling, niri kdl config, matugen templates), referenced by the matching `modules/home-manager/` module.
+
 ## TODO
 
 - Waybar mecha (buttons)

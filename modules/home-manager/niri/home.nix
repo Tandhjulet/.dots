@@ -1,6 +1,9 @@
 { lib, config, pkgs, ... }:
 
-let 
+let
+  cfg = config.my.wms.niri;
+  themeDir = ../../../programs/niri + "/${cfg.theme}";
+
   mkNiriOutput = m: ''
     output "${m.name}" {
         mode "${toString m.width}x${toString m.height}@${toString m.refresh}"
@@ -13,14 +16,11 @@ in
 {
   imports = [ ../wayland.nix ../options.nix ];
 
-  home.packages = with pkgs; [
-    alacritty
-    fuzzel
-  ];
+  home.packages = cfg.packages;
 
   xdg.configFile."niri/outputs.kdl".text = niriOutputs;
   xdg.configFile."niri" = {
-    source = ../../../programs/niri/config;
+    source = themeDir + "/config";
     recursive = true;
   };
 }

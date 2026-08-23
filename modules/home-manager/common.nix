@@ -25,18 +25,14 @@
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
-      ## Theming
-
       github.github-vscode-theme
       vscode-icons-team.vscode-icons
-
-      ## Languages/Syntax Highlighting/Intellisense
 
       jnoortheen.nix-ide
 
       redhat.vscode-yaml
       redhat.vscode-xml
-      
+
       redhat.java
       vue.volar
       rust-lang.rust-analyzer
@@ -47,10 +43,6 @@
       dart-code.dart-code
 
       esbenp.prettier-vscode
-
-      # Missing: PHP, Laravel, Livewire, KDL
-      
-      # Miscellaneous
 
       anthropic.claude-code
     ];

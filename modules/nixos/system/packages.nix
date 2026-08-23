@@ -1,29 +1,26 @@
 { inputs, config, pkgs, ... }:
 
 {
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
-    vim 
+    vim
     wget
     spotify
     vscode
 
-    ## Misc
     brightnessctl
     libnotify
 
-    ## Files, images, etc.
-    jq # Command-line JSON
-    imagemagick # Image processing (for Niri, backdrop blur)
+    jq
+    imagemagick
     ffmpeg
     unrar
     unzip
     zip
-    mpv # Movie Player (video)
-    imv # LW images viewer
+    mpv
+    imv
   ];
 }

@@ -5,6 +5,8 @@
     [
       ./hardware-configuration.nix
 
+      ../../modules/nixos/options.nix
+
       ../../modules/nixos/hardware/nvidia.nix
       ../../modules/nixos/hardware/audio.nix
 
@@ -17,34 +19,29 @@
       ../../modules/nixos/desktop/niri.nix
     ];
 
-  # Bootloader.
-  # boot.loader.systemd-boot.enable = true;
+  my.wm = "niri";
+
   boot.loader.timeout = null;
   boot.loader.grub = {
     enable = true;
     efiSupport = true;
-    # useOSProber = true;
     device = "nodev";
   };
 
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Enable CUPS to print documents.
   services.printing.enable = true;
 
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
 
-  # User / Home Manager
   users.users."${username}" = {
     isNormalUser = true;
     extraGroups = [ "wireshark" "lp" "storage" "audio" "video" "networkmanager" "wheel" ];
   };
-  
-  # Nix Settings
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.nix-ld = {

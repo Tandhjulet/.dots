@@ -6,7 +6,6 @@
   ];
 
   home.packages = with pkgs; [
-    # inputs.matugen.packages.${stdenv.hostPlatform.system}.default
     (pkgs.writeShellScriptBin "set-wallpaper" ''
       set -e
       WALLPAPER="$1"
@@ -21,11 +20,6 @@
     settings = {
       config = {
         version_check = false;
-
-        # wallpaper = {
-        #   set = true;
-        #   command = "awww img --transition-type center {{ image }}";
-        # };
       };
 
       templates = {

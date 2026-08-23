@@ -1,33 +1,39 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
+let
+  cfg = config.my.programs.rofi;
+  themeDir = ../../../programs/rofi + "/${cfg.theme}";
+in
 {
-  programs.rofi = {
-    enable = true;
+  config = lib.mkIf cfg.enable {
+    programs.rofi = {
+      enable = true;
 
-    terminal = "alacritty"; # TODO
-    location = "center";
-    modes = [
-      "drun"
-      "run"
-      "window"
-    ];
+      terminal = "alacritty";
+      location = "center";
+      modes = [
+        "drun"
+        "run"
+        "window"
+      ];
 
-    extraConfig = {
-      show-icons = true;
-      drun-display-format = "{icon} {name}";
-      disable-history = false;
-      display-drun = " 󰍜 Apps ";
-      display-run = "   Run ";
-      display-window = "   Window ";
+      extraConfig = {
+        show-icons = true;
+        drun-display-format = "{icon} {name}";
+        disable-history = false;
+        display-drun = " 󰍜 Apps ";
+        display-run = "   Run ";
+        display-window = "   Window ";
 
-      sidebar-mode = true;
-      window-format = "{w} | {c} | {t}";
+        sidebar-mode = true;
+        window-format = "{w} | {c} | {t}";
 
-      cycle = false;
+        cycle = false;
+      };
+
+      theme = "~/.config/rofi/theme.rasi";
     };
 
-    theme = "~/.config/rofi/theme.rasi";
+    xdg.configFile."rofi/theme.rasi".source = themeDir + "/theme.rasi";
   };
-
-  xdg.configFile."rofi/theme.rasi".source = ../../../programs/rofi/theme.rasi;
 }

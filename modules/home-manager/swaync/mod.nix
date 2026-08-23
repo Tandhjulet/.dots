@@ -1,15 +1,21 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
+let
+  cfg = config.my.programs.swaync;
+  themeDir = ../../../programs/swaync + "/${cfg.theme}";
+in
 {
-  services.swaync = {
-    enable = true;
+  config = lib.mkIf cfg.enable {
+    services.swaync = {
+      enable = true;
 
-    settings = builtins.fromJSON (builtins.readFile ../../../programs/swaync/config.json);
-    style = ../../../programs/swaync/style.css;
-  };
+      settings = builtins.fromJSON (builtins.readFile (themeDir + "/config.json"));
+      style = themeDir + "/style.css";
+    };
 
-  xdg.configFile."swaync/styles" = {
-    source = ../../../programs/swaync/styles;
-    recursive = true;
+    xdg.configFile."swaync/styles" = {
+      source = themeDir + "/styles";
+      recursive = true;
+    };
   };
 }

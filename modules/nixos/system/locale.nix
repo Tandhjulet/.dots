@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # Internalization
-
   time.timeZone = "Europe/Copenhagen";
 
   i18n.defaultLocale = "en_DK.UTF-8";
@@ -18,14 +16,10 @@
     LC_TIME = "en_DK.UTF-8";
   };
 
-  # Keymaps
-
-  # Configure keymap in X11
   services.xserver.xkb = {
     layout = "dk";
     variant = "nodeadkeys";
   };
 
-  # Configure console keymap
   console.keyMap = "dk-latin1";
 }

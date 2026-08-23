@@ -7,20 +7,18 @@
     ./swaync/mod.nix
   ];
 
-  # TODO: wallpaper
   programs.fastfetch.enable = true;
-  programs.swaylock.enable = true; # screen locker
-  # let the terminal and shell be decided by the user
+  programs.swaylock.enable = true;
 
-  services.swayidle.enable = true; # idle management daemon
-  
+  services.swayidle.enable = true;
+
   home.packages = with pkgs; [
     swaybg
     xwayland-satellite
-    wl-clipboard # Clipboard tools for wayland
-    cliphist # Clipboard history
-    grim # Screenshot
-    slurp # Regional screenshots
+    wl-clipboard
+    cliphist
+    grim
+    slurp
 
     xdg-utils
     xhost

@@ -23,7 +23,7 @@
   boot.loader.grub = {
     enable = true;
     efiSupport = true;
-    useOSProber = false; # true;
+    # useOSProber = true;
     device = "nodev";
   };
 
@@ -46,6 +46,19 @@
   
   # Nix Settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc.lib
+      zlib
+      openssl
+      curl
+      icu
+      libunwind
+      glib
+    ];
+  };
 
   system.stateVersion = stateVersion;
 }

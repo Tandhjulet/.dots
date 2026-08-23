@@ -11,6 +11,8 @@ This is still a work-in-progress. More information will follow.
 - Hyprland setup (ilyamiro's .dots wrapped, perhaps?)
 - MangoWC setup
 - DriftWM
+- Better structure, handle the WMs and package themes (e.g. waybar "mecha"/whatever) with options (how should this work?)
+- Declarative fan control (is this even possible?)
 
 ## CREDIT
 

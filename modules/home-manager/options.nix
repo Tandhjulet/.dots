@@ -21,7 +21,7 @@
       spicetify = {
         enable = lib.mkOption { type = lib.types.bool; default = true; description = "Enable Spicetify (themed Spotify)."; };
         theme = lib.mkOption { type = lib.types.enum [ "hazy" "dribbblish" "text" ]; default = "hazy"; description = "Spicetify theme to use."; };
-        marketplace = lib.mkOption { type = lib.types.bool; default = true; description = "Install the Spicetify Marketplace custom app."; };
+        marketplace = lib.mkOption { type = lib.types.bool; default = false; description = "Install the Spicetify Marketplace custom app."; };
         extensions = lib.mkOption {
           type = lib.types.listOf (lib.types.enum [
             "playingSource"
@@ -41,7 +41,6 @@
             "betterGenres"
             "history"
             "shuffle"
-            "trashbin"
           ];
           description = "Spicetify extensions to enable.";
         };

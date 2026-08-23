@@ -17,6 +17,11 @@
         enable = lib.mkOption { type = lib.types.bool; default = true; description = "Enable SwayNC (notification daemon)."; };
         theme = lib.mkOption { type = lib.types.enum [ "default" ]; default = "default"; description = "SwayNC theme to use."; };
       };
+
+      spicetify = {
+        enable = lib.mkOption { type = lib.types.bool; default = true; description = "Enable Spicetify (themed Spotify)."; };
+        theme = lib.mkOption { type = lib.types.enum [ "hazy" ]; default = "hazy"; description = "Spicetify theme to use."; };
+      };
     };
 
     wms = {

@@ -8,6 +8,11 @@
     };
 
     matugen.url = "github:/InioX/Matugen";
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

@@ -3,6 +3,7 @@
 {
   imports = [
     ./theming/default.nix
+    ./programs/spicetify/mod.nix
   ];
 
   home.packages = with pkgs; [

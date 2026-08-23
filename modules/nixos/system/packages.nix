@@ -8,7 +8,6 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
-    spotify
     vscode
 
     brightnessctl

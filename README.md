@@ -28,3 +28,5 @@ This is still a work-in-progress. More information will follow.
 - [sejjy/mechabar](https://github.com/sejjy/mechabar): Author of the "mechabar" waybar theme
 - [hakuimaku/hakuspace](https://github.com/hakuimaku/hakuspace): Niri configuration
 - [iyiolacak/iyiolacak-swaync-config](https://github.com/iyiolacak/iyiolacak-swaync-config): Inspired the minimalistic SwayNC config
+- [Astromations/Hazy](https://github.com/Astromations/Hazy): The "Hazy" Spicetify theme
+- [Gerg-L/spicetify-nix](https://github.com/Gerg-L/spicetify-nix): Home-manager module for Spicetify

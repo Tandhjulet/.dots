@@ -23,7 +23,6 @@
 
   my.wm = "niri";
 
-  boot.loader.timeout = null;
   boot.loader.grub = {
     enable = true;
     efiSupport = true;

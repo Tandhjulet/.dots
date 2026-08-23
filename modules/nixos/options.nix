@@ -10,8 +10,8 @@
   options.my.boot.plymouth = {
     enable = lib.mkOption { type = lib.types.bool; default = true; description = "Enable the Plymouth boot splash."; };
     theme = lib.mkOption {
-      type = lib.types.enum [ "bgrt" "catppuccin-mocha" "catppuccin-macchiato" "catppuccin-frappe" "catppuccin-latte" ];
-      default = "catppuccin-mocha";
+      type = lib.types.enum [ "bgrt" "catppuccin-mocha" "catppuccin-macchiato" "catppuccin-frappe" "catppuccin-latte" "cuts_alt" ];
+      default = "cuts_alt";
       description = "Plymouth theme to use.";
     };
   };

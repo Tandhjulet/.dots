@@ -2,20 +2,31 @@
 
 let
   cfg = config.my.boot.plymouth;
-  catppuccinVariant = lib.removePrefix "catppuccin-" cfg.theme;
+
+  themePackages =
+    if lib.hasPrefix "catppuccin-" cfg.theme then
+      [ (pkgs.catppuccin-plymouth.override { variant = lib.removePrefix "catppuccin-" cfg.theme; }) ]
+    else if cfg.theme == "bgrt" then
+      [ ]
+    else
+      [ (pkgs.adi1090x-plymouth-themes.override { selected_themes = [ cfg.theme ]; }) ];
 in
 {
   config = lib.mkIf cfg.enable {
     boot.plymouth = {
       enable = true;
       theme = cfg.theme;
-      themePackages = lib.optional (lib.hasPrefix "catppuccin-" cfg.theme) (
-        pkgs.catppuccin-plymouth.override { variant = catppuccinVariant; }
-      );
+      inherit themePackages;
     };
 
-    boot.kernelParams = [ "quiet" "loglevel=3" ];
     boot.consoleLogLevel = 3;
     boot.initrd.verbose = false;
+    boot.kernelParams = [
+      "quiet"
+      "rd.udev.log_level=3"
+      "rd.systemd.show_status=auto"
+    ];
+
+    boot.loader.timeout = 0;
   };
 }

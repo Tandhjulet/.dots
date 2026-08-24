@@ -9,7 +9,9 @@
     ../../modules/nixos/hardware/nvidia.nix
   ];
 
-  my.wm = "niri";
+  # my.wm = "niri";
+
+  my.wm = "hyprland";
 
   boot.loader.grub = {
     enable = true;

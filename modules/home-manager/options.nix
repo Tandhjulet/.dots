@@ -63,7 +63,7 @@
           type = lib.types.listOf lib.types.package;
           default = with pkgs; [
             foot
-            xfce.thunar
+            thunar
             pwvucontrol
 
             libnotify

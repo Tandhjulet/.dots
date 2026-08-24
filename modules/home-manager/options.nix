@@ -56,6 +56,28 @@
           description = "Packages to install alongside niri (terminal, launcher, etc.).";
         };
       };
+
+      hyprland = {
+        flavor = lib.mkOption { type = lib.types.enum [ "caelestia" ]; default = "caelestia"; description = "Hyprland flavor/shell to use."; };
+        packages = lib.mkOption {
+          type = lib.types.listOf lib.types.package;
+          default = with pkgs; [
+            foot
+            xfce.thunar
+            pwvucontrol
+
+            libnotify
+            swappy
+            dart-sass
+            gpu-screen-recorder
+            fuzzel
+            gammastep
+            trash-cli
+            bluez
+          ];
+          description = "Packages to install alongside Hyprland (terminal, launcher, etc.).";
+        };
+      };
     };
 
     monitors = lib.mkOption {

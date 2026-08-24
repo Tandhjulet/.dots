@@ -2,7 +2,7 @@
 
 {
   options.my.wm = lib.mkOption {
-    type = lib.types.enum [ "niri" ];
+    type = lib.types.enum [ "niri" "hyprland" "gnome" ];
     default = "niri";
     description = "Window manager / compositor to use.";
   };

@@ -1,19 +1,12 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./programs/waybar/mod.nix
-    ./programs/rofi/mod.nix
-    ./programs/swaync/mod.nix
-  ];
-
   programs.fastfetch.enable = true;
   programs.swaylock.enable = true;
 
   services.swayidle.enable = true;
 
   home.packages = with pkgs; [
-    xwayland-satellite
     wl-clipboard
     cliphist
     grim
@@ -28,6 +21,7 @@
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
       xdg-desktop-portal-gnome
+      xdg-desktop-portal-hyprland
       xdg-desktop-portal
     ];
     config.common.default = "";

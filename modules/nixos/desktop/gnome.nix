@@ -1,8 +1,7 @@
-{ lib, config, pkgs, ... }:
+{ config, lib, ... }:
 
 {
-  services.xserver.enable = true;
-
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  config = lib.mkIf (config.my.wm == "gnome") {
+    services.desktopManager.gnome.enable = true;
+  };
 }

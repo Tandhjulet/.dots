@@ -14,9 +14,16 @@ let
   niriOutputs = lib.concatStrings (map mkNiriOutput config.my.monitors);
 in
 {
-  imports = [ ../../wayland.nix ../../options.nix ];
+  imports = [
+    ../../wayland.nix
+    ../../options.nix
 
-  home.packages = cfg.packages;
+    ../../programs/waybar/mod.nix
+    ../../programs/rofi/mod.nix
+    ../../programs/swaync/mod.nix
+  ];
+
+  home.packages = cfg.packages ++ [ pkgs.xwayland-satellite ];
 
   xdg.configFile."niri/outputs.kdl".text = niriOutputs;
   xdg.configFile."niri" = {

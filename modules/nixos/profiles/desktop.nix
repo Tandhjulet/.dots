@@ -16,8 +16,10 @@
     ../system/users.nix
 
     ../desktop/common.nix
+    ../desktop/display-manager.nix
     ../desktop/gnome.nix
     ../desktop/niri.nix
+    ../desktop/hyprland.nix
 
     ../boot/plymouth.nix
     ../boot/silent.nix

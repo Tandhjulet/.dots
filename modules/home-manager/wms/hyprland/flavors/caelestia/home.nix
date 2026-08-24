@@ -25,6 +25,8 @@ let
     ${lib.concatStringsSep "\n" (lib.mapAttrsToList (k: v: "    ${k} = ${toLuaValue v},") cfg.vars)}
     }
   '';
+
+  shellSettingsFile = (pkgs.formats.json { }).generate "caelestia-shell-initial.json" config.programs.caelestia.settings;
 in
 {
   imports = [ inputs.caelestia-shell.homeManagerModules.default ];
@@ -37,6 +39,19 @@ in
 
       cli.settings.wallpaper.postHook = ''awww img "$WALLPAPER_PATH" --transition-type center'';
     };
+
+    # shell.json is left as a real, writable file (seeded once below) rather than
+    # an immutable home-manager symlink, since caelestia persists its own runtime
+    # state (scheme choice, etc.) back into it and can't write to a store symlink.
+    xdg.configFile."caelestia/shell.json".enable = lib.mkForce false;
+
+    home.activation.caelestiaShellConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      target="$HOME/.config/caelestia/shell.json"
+      if [ ! -e "$target" ]; then
+        run mkdir -p "$(dirname "$target")"
+        run install -m 644 "${shellSettingsFile}" "$target"
+      fi
+    '';
 
     xdg.configFile."hypr" = {
       source = "${inputs.caelestia-dots}/hypr";

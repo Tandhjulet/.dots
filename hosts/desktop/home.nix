@@ -20,6 +20,7 @@
   };
 
   programs.caelestia.settings.paths.wallpaperDir = "~/Pictures/wallpapers/images";
+  programs.caelestia.settings.general.logo = "caelestia";
 
   home.pointerCursor = {
     gtk.enable = true;

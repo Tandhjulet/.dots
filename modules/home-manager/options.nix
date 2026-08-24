@@ -59,6 +59,10 @@
 
       hyprland = {
         flavor = lib.mkOption { type = lib.types.enum [ "caelestia" ]; default = "caelestia"; description = "Hyprland flavor/shell to use."; };
+        keyboard = {
+          layout = lib.mkOption { type = lib.types.str; default = "us"; description = "XKB keyboard layout for Hyprland."; };
+          variant = lib.mkOption { type = lib.types.str; default = ""; description = "XKB keyboard variant for Hyprland."; };
+        };
         packages = lib.mkOption {
           type = lib.types.listOf lib.types.package;
           default = with pkgs; [

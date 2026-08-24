@@ -12,8 +12,9 @@
   ];
 
   my.wms.hyprland.flavor = "caelestia";
+  my.wms.hyprland.keyboard = { layout = "dk"; variant = "nodeadkeys"; };
 
-  programs.caelestia.settings.paths.wallpaperDir = "~/Pictures/Wallpapers/imagines";
+  programs.caelestia.settings.paths.wallpaperDir = "~/Pictures/Wallpapers/images";
 
   # my.programs.spicetify.theme = "text";
 

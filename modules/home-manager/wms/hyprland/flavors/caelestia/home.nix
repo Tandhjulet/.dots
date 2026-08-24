@@ -30,6 +30,13 @@ in
 
     xdg.configFile."caelestia/hypr-user.lua".text = ''
       ${hyprMonitors}
+      hl.config({
+          input = {
+              kb_layout  = "${cfg.keyboard.layout}",
+              kb_variant = "${cfg.keyboard.variant}",
+          },
+      })
+
       hl.on("hyprland.start", function()
           hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP HYPRLAND_INSTANCE_SIGNATURE")
           hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP HYPRLAND_INSTANCE_SIGNATURE")

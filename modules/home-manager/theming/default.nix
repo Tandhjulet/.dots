@@ -15,7 +15,11 @@ in
       set -e
       WALLPAPER="$(readlink -f "$1")"
       mkdir -p "$(dirname "${wallpaperStateFile}")"
-      matugen image "$WALLPAPER"
+      if command -v caelestia >/dev/null 2>&1; then
+        caelestia wallpaper -f "$WALLPAPER"
+      else
+        matugen image "$WALLPAPER"
+      fi
       ln -sf "$WALLPAPER" "${wallpaperStateFile}"
     '')
 
@@ -26,7 +30,12 @@ in
         awww query >/dev/null 2>&1 && break
         sleep 0.25
       done
-      matugen image "$(readlink -f "${wallpaperStateFile}")"
+      WALLPAPER="$(readlink -f "${wallpaperStateFile}")"
+      if command -v caelestia >/dev/null 2>&1; then
+        caelestia wallpaper -f "$WALLPAPER"
+      else
+        matugen image "$WALLPAPER"
+      fi
     '')
   ];
 

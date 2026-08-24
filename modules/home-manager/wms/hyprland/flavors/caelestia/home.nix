@@ -12,6 +12,19 @@ let
     })
   '';
   hyprMonitors = lib.concatStrings (map mkHyprMonitor config.my.monitors);
+
+  toLuaValue = v:
+    if builtins.isString v then builtins.toJSON v
+    else if builtins.isBool v then (if v then "true" else "false")
+    else if builtins.isInt v || builtins.isFloat v then toString v
+    else if builtins.isList v then "{ ${lib.concatMapStringsSep ", " toLuaValue v} }"
+    else throw "my.wms.hyprland.vars: unsupported value type";
+
+  hyprVars = ''
+    return {
+    ${lib.concatStringsSep "\n" (lib.mapAttrsToList (k: v: "    ${k} = ${toLuaValue v},") cfg.vars)}
+    }
+  '';
 in
 {
   imports = [ inputs.caelestia-shell.homeManagerModules.default ];
@@ -21,12 +34,16 @@ in
       enable = true;
       cli.enable = true;
       systemd.enable = false;
+
+      cli.settings.wallpaper.postHook = ''awww img "$WALLPAPER_PATH" --transition-type center'';
     };
 
     xdg.configFile."hypr" = {
       source = "${inputs.caelestia-dots}/hypr";
       recursive = true;
     };
+
+    xdg.configFile."caelestia/hypr-vars.lua".text = hyprVars;
 
     xdg.configFile."caelestia/hypr-user.lua".text = ''
       ${hyprMonitors}

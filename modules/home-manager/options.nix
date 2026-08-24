@@ -63,6 +63,11 @@
           layout = lib.mkOption { type = lib.types.str; default = "us"; description = "XKB keyboard layout for Hyprland."; };
           variant = lib.mkOption { type = lib.types.str; default = ""; description = "XKB keyboard variant for Hyprland."; };
         };
+        vars = lib.mkOption {
+          type = lib.types.attrsOf lib.types.anything;
+          default = { };
+          description = "Overrides for Caelestia's hypr/variables.lua (keybinds, cursor, gaps, etc.), written to hypr-vars.lua.";
+        };
         packages = lib.mkOption {
           type = lib.types.listOf lib.types.package;
           default = with pkgs; [

@@ -13,8 +13,21 @@
 
   my.wms.hyprland.flavor = "caelestia";
   my.wms.hyprland.keyboard = { layout = "dk"; variant = "nodeadkeys"; };
+  my.wms.hyprland.vars = {
+    cursorTheme = "DMZ-White";
+    cursorSize = 24;
+    kbLauncher = "SUPER + R";
+  };
 
-  programs.caelestia.settings.paths.wallpaperDir = "~/Pictures/Wallpapers/images";
+  programs.caelestia.settings.paths.wallpaperDir = "~/Pictures/wallpapers/images";
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    name = "DMZ-White";
+    package = pkgs.vanilla-dmz;
+    size = 24;
+  };
 
   # my.programs.spicetify.theme = "text";
 

@@ -13,6 +13,8 @@
 
   my.wms.hyprland.flavor = "caelestia";
 
+  programs.caelestia.settings.paths.wallpaperDir = "~/Pictures/Wallpapers/imagines";
+
   # my.programs.spicetify.theme = "text";
 
   programs.git.settings.user = {

@@ -69,6 +69,12 @@ in
           output_path = "${config.xdg.configHome}/swaync/colors.css";
           post_hook = "swaync-client -rs";
         };
+
+        kitty = {
+          input_path = ./templates/kitty-colors.conf;
+          output_path = "${config.xdg.configHome}/kitty/themes/Matugen.conf";
+          post_hook = "kitty +kitten themes --reload-in=all Matugen || pkill -SIGUSR1 kitty || :";
+        };
       };
     };
   };

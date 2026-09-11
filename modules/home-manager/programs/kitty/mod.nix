@@ -20,7 +20,10 @@ in
         scrollback_lines = 10000;
         cursor_shape = "beam";
         window_padding_width = 8;
+        allow_remote_control = "yes";
       };
+
+      extraConfig = "include themes/Matugen.conf";
     };
   };
 }

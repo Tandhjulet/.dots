@@ -11,7 +11,7 @@
     { name = "DP-2"; width = 1920; height = 1080; refresh = 60.0; x = -1920; y = 0; scale = 1.0; }
   ];
 
-  my.wms.hyprland.flavor = "caelestia";
+  my.wms.hyprland.flavor = "serpantinum";
   my.wms.hyprland.keyboard = { layout = "dk"; variant = "nodeadkeys"; };
   my.wms.hyprland.vars = {
     cursorTheme = "DMZ-White";

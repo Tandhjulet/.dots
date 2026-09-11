@@ -1,8 +1,11 @@
-{ config, lib, pkgs, username, ... }:
+{ config, lib, pkgs, username, inputs, ... }:
 
 {
+  imports = [ inputs.serpantinum.nixosModules.default ];
+
   config = lib.mkIf (config.my.wm == "hyprland") {
     programs.hyprland.enable = true;
+    programs.serpantinum.enable = true;
 
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";

@@ -23,6 +23,11 @@
       url = "github:caelestia-dots/caelestia";
       flake = false;
     };
+
+    serpantinum = {
+      url = "github:ilyamiro/serpantinum";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:

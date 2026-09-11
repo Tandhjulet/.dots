@@ -18,6 +18,15 @@
         theme = lib.mkOption { type = lib.types.enum [ "default" ]; default = "default"; description = "SwayNC theme to use."; };
       };
 
+      kitty = {
+        enable = lib.mkOption { type = lib.types.bool; default = true; description = "Enable the kitty terminal."; };
+        theme = lib.mkOption {
+          type = lib.types.enum [ "Catppuccin-Mocha" "Catppuccin-Macchiato" "Catppuccin-Frappe" "Catppuccin-Latte" ];
+          default = "Catppuccin-Mocha";
+          description = "Kitty color theme, from the bundled kitty-themes collection.";
+        };
+      };
+
       spicetify = {
         enable = lib.mkOption { type = lib.types.bool; default = true; description = "Enable Spicetify (themed Spotify)."; };
         theme = lib.mkOption { type = lib.types.enum [ "hazy" "dribbblish" "text" ]; default = "hazy"; description = "Spicetify theme to use."; };

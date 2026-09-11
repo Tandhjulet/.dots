@@ -12,6 +12,11 @@ let
     }
   '';
   niriOutputs = lib.concatStrings (map mkNiriOutput config.my.monitors);
+
+  primaryOutputs = builtins.filter (m: m.primary) config.my.monitors;
+  primaryFocus = lib.optionalString (primaryOutputs != [ ]) ''
+    spawn-at-startup "niri" "msg" "action" "focus-monitor" "${(builtins.head primaryOutputs).name}"
+  '';
 in
 {
   imports = [
@@ -25,7 +30,7 @@ in
 
   home.packages = cfg.packages ++ [ pkgs.xwayland-satellite ];
 
-  xdg.configFile."niri/outputs.kdl".text = niriOutputs;
+  xdg.configFile."niri/outputs.kdl".text = niriOutputs + primaryFocus;
   xdg.configFile."niri" = {
     source = themeDir + "/config";
     recursive = true;

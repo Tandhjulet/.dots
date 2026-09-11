@@ -13,6 +13,11 @@ let
   '';
   hyprMonitors = lib.concatStrings (map mkHyprMonitor config.my.monitors);
 
+  primaryOutputs = builtins.filter (m: m.primary) config.my.monitors;
+  primaryFocusCmd = lib.optionalString (primaryOutputs != [ ]) ''
+    hl.exec_cmd("hyprctl dispatch focusmonitor ${(builtins.head primaryOutputs).name}")
+  '';
+
   hyprlandLua = pkgs.writeText "hyprland.lua" ''
     require("config/variables")
     require("config/env")
@@ -36,6 +41,7 @@ let
     hl.on("hyprland.start", function()
         hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP HYPRLAND_INSTANCE_SIGNATURE")
         hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP HYPRLAND_INSTANCE_SIGNATURE")
+        ${primaryFocusCmd}
     end)
   '';
 

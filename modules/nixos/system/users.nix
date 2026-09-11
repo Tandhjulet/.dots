@@ -3,6 +3,6 @@
 {
   users.users."${username}" = {
     isNormalUser = true;
-    extraGroups = [ "wireshark" "lp" "storage" "audio" "video" "networkmanager" "wheel" ];
+    extraGroups = [ "wireshark" "lp" "storage" "audio" "video" "networkmanager" "wheel" "docker" ];
   };
 }

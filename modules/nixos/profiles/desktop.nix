@@ -14,6 +14,8 @@
     ../system/nix.nix
     ../system/nix-ld.nix
     ../system/users.nix
+    ../system/virtualisation.nix
+    ../system/development.nix
 
     ../desktop/common.nix
     ../desktop/display-manager.nix

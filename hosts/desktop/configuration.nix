@@ -18,6 +18,8 @@
     useOSProber = true;
     efiSupport = true;
     device = "nodev";
+
+    timeout = null;
   };
 
   boot.loader.efi.canTouchEfiVariables = true;

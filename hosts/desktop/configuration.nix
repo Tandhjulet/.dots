@@ -13,11 +13,13 @@
 
   my.wm = "hyprland";
 
-  boot.loader.grub = {
-    enable = true;
-    useOSProber = true;
-    efiSupport = true;
-    device = "nodev";
+  boot.loader = {
+    grub = {
+      enable = true;
+      useOSProber = true;
+      efiSupport = true;
+      device = "nodev";
+    };
 
     timeout = null;
   };
